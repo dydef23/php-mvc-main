@@ -1,6 +1,6 @@
 <?php
 
-class MatkulMhs_model
+class Matkulmhs_model
 {
     private $table = 'matkul_mhs';
     private $db;
@@ -20,27 +20,28 @@ class MatkulMhs_model
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function getDataByNrp($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nrp_mhs=:id');
         $this->db->bind('id', $id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function getDataByIdMt($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_matkul=:id');
         $this->db->bind('id', $id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function getRow($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_matkul=:id');
         $this->db->bind('id', $id);
+        $this->db->execute();
         return $this->db->rowCount();
     }
 

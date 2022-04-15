@@ -16,12 +16,10 @@ class Matkul extends Controller
     {
         $data['judul'] = 'Detail Mata Kuliah';
         $data['matkul'] = $this->model('Matkul_model')->getMatkulById($id);
-        $dataMatkultMhs['matkul_mhs'] = $this->model('MatkulMhs_model')->getDataByIdMt($id);
-        $dataMhs['mhs'] = $this->model('Mahasiswa_model')->getAllMahasiswa();
-        $row['matkul_mhs'] = $this->model('MatkulMhs_model')->getRow($id);
+        $row['matkul_mhs'] = $this->model('Matkulmhs_model')->getRow($id);
 
         $this->view('templates/header', $data);
-        $this->view('matkul/detail', $data, $dataMatkultMhs, $dataMhs, $row);
+        $this->view('matkul/detail', $data);
         $this->view('templates/footer');
     }
 

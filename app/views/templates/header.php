@@ -21,7 +21,6 @@
           <a class="nav-item nav-link active" href="<?= BASEURL; ?>">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="<?= BASEURL; ?>/mahasiswa">Mahasiswa</a>
           <a class="nav-item nav-link" href="<?= BASEURL; ?>/matkul">Mata Kuliah</a>
-          <a class="nav-item nav-link" href="<?= BASEURL; ?>/matkul_mhs">Data Mata Kuliah</a>
         </div>
       </div>
     </div>

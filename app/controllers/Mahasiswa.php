@@ -7,7 +7,6 @@ class Mahasiswa extends Controller
         $data['judul'] = 'Daftar Mahasiswa';
         $data['mhs'] = $this->model('Mahasiswa_model')->getAllMahasiswa();
 
-
         $this->view('templates/header', $data);
         $this->view('mahasiswa/index', $data);
         $this->view('templates/footer');
@@ -17,6 +16,8 @@ class Mahasiswa extends Controller
     {
         $data['judul'] = 'Detail Mahasiswa';
         $data['mhs'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
+        $data['matkul_mhs'] = $this->model('Matkulmhs_model')->getDataByNrp($id);
+        $data['matkul'] = $this->model('Matkul_model')->getMatkulById($data['matkul_mhs']['id_matkul']);
 
         $this->view('templates/header', $data);
         $this->view('mahasiswa/detail', $data);
